@@ -44,74 +44,15 @@ I chose to use Linear Regression initially instead of another machine learning m
 
 The main objective of this analysis was to predict the growth in CO2 emissions based on the growth of various energy sources. Given the limited information in this dataset, accurately predicting a country's CO2 emissions growth is challenging. The intent was to experiment and gauge the accuracy of a Linear Regression model in this context, without additional information on other industries such as manufacturing or transportation.
 
-To address the outlier challenge, I followed a method discussed by Davin Cermak in an [article on medium.com](https://medium.com/mlearning-ai/three-simple-methods-for-dealing-with-outliers-in-regression-analysis-8003ca56734c#:~:text=The%20linear%20regression%20results%20from,the%20model%20without%20the%20outlier.). This method involves detecting outliers and introducing a binary variable to indicate their presence or absence in the dataset.
-
 ### Results
 
-
-I experimented with several dataset modifications to improve the Linear Regression model's performance. The detailed results of these tests can be found in the file: `SustainableEnergyRegressionAnalysis.ipynb`. Below are the key findings:
+ Below are the key findings:
 
 - Without modifying the dataset, the model severely overfits the training set.
 - Introducing more independent variables to represent outliers reduces overfitting but violates the independence of observations model assumption.
 
 I also explored adding additional columns to represent the spread of data, considering that the independence of observations model assumption was already being violated. Surprisingly, incorporating Z-Score or IQR-Range information did not result in a better performing model. The Z-Score is calculated as the difference from the mean as a multiple of the standard deviation, and the IQR-Range information is calculated as the difference between the value and the 25th and 75th percentiles as a multiple of the Inter-Quartile Range.
 
-However, providing information on the percentiles significantly improved model performance and reduced overfitting.
-
-
-<style>
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-
-  th, td {
-    border: 1px solid #dddddd;
-    padding: 8px;
-    text-align: left;
-  }
-
-  th {
-    background-color: #f2f2f2;
-  }
-</style>
-
-<table>
-  <tr>
-    <th>How the dataset was modified for each model</th>
-    <th>R<sup>2</sup> score on the training set</th>
-    <th>R<sup>2</sup> score on the testing set</th>
-  </tr>
-  <tr>
-    <td>Not handling outliers</td>
-    <td>0.536780</td>
-    <td>0.057301</td>
-  </tr>
-  <tr>
-    <td>One additional variable for each independent variable</td>
-    <td>0.553868</td>
-    <td>0.211504</td>
-  </tr>
-  <tr>
-    <td>Multiple additional variable for each independent variable</td>
-    <td>0.636176</td>
-    <td>0.518298</td>
-  </tr>
-  <tr>
-    <td>Percentiles given for each independent variable</td>
-    <td>0.676226</td>
-    <td>0.395929</td>
-  </tr>
-</table>
-
-For a more in-depth evaluation of the models and a detailed breakdown of the coefficients for each model, refer to the file `SustainableEnergyRegressionAnalysis.ipynb`.
-
-<div style="display: flex; justify-content: space-between;">
-    <img src="images/regression/NotHandlingOutliers.png" alt="Predicted vs Actual values when not handling outliers" width="30%">
-    <img src="images/regression/MultipleDummyVariables.png" alt="Predicted vs Actual values when using multiple dummy variables" width="30%">
-    <img src="images/regression/UsingPercentiles.png" alt="Predicted vs Actual values when including percentiles" width="30%">
-</div>
 
 ## Required Packages:
 - jupyter
