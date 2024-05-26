@@ -23,15 +23,6 @@ Natural Earth provides free vector and raster map data,
 and GeoPandas makes it easy to merge dataframes based on geographic data. \
 This eliminated the need to merge the dataframes based on contradicting country names.\
 
-
-<div style="display: flex; justify-content: space-between; margin-bottom: 20px">
-    <img src="images/Fossil_Fuels_Growth.png" alt="Choropleth map of Fossil Fuel Growth" width="30%">
-    <img src="images/Nuclear_Growth.png" alt="Choropleth map of Nuclear Growth" width="30%">
-    <img src="images/Renewables_Growth.png" alt="Choropleth map of Renewables Growth" width="30%">
-</div>
-
-
-
 ## Approach for Multiple Linear Regression Analysis
 The dataset used for this analysis is relatively small and contains a significant number of outliers. \
 These outliers most likely indicate differences between developed and developing countries, 
