@@ -4,6 +4,7 @@ dataset, created by Ansh Tanwar and obtained from kaggle.com. \
 The Juypter notebook "SustainableEnergyEDA.ipynb" contains my analysis of this dataset, 
 my thoughts while exploring it, and some visualizations I created to gain insights into sustainable energy trends over two decades.
 
+#Geograph file link-https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/
 
 ## Steps Taken to Perform Exploratory Data Analysis (EDA):-
 - Renamed columns for con\
